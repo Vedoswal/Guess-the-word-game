@@ -36,7 +36,13 @@ function check(){
 get_answer=document.getElementById("input_check_box").value;
 answer=get_answer.toLowerCase();
 console.log(answer);
+if(answer!=word){
+    document.getElementById("game_status").innerHTML="Thats the wrong answer!!";
+    document.getElementById("game_status").style.color="red";
+}
 if(answer==word){
+    document.getElementById("game_status").innerHTML="Thats the correct answer!!";
+    document.getElementById("game_status").style.color="green";
 if(answer_turn=="player_1"){
     player1_score=player1_score+1;
     document.getElementById("player1_score").innerHTML=player1_score;
@@ -64,5 +70,5 @@ else{
     answe_turn="player_1";
     document.getElementById("player_answer").innerHTML="answer turn-"+player1_name;
 }
-
+document.getElementById("output").innerHTML="";
 }
